@@ -1,0 +1,19 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PERFORM.
+       AUTHOR. NELLO.
+       DATE-WRITTEN. 10/06/2024.
+       DATA DIVISION.
+           WORKING-STORAGE SECTION.
+           01 WS-VARIABILE PIC 9(1) VALUE 0.
+
+       PROCEDURE DIVISION.
+           PARAGRAFO-A.
+           PERFORM PARAGRAFO-B 5 TIMES.
+           STOP RUN.
+
+           PARAGRAFO-B.
+           DISPLAY "PARAGRAFO-B VARIABILE:" WS-VARIABILE.
+           ADD 1 TO WS-VARIABILE
+           IF WS-VARIABILE = 3
+             STOP RUN
+           END-IF.

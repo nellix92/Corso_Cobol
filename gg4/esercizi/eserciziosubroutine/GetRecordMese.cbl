@@ -1,0 +1,37 @@
+         IDENTIFICATION DIVISION.
+       PROGRAM-ID. GetRecordMese.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+           FILE-CONTROL.
+               SELECT FILE-MESE ASSIGN TO "Vendite-mese.txt"
+               ORGANIZATION IS LINE SEQUENTIAL.
+
+       DATA DIVISION.
+           FILE SECTION.
+           FD FILE-MESE.
+           01 RECORD-MESE.
+               05 RECORD-MESE-NOME PIC X(10).
+               05 RECORD-MESE-SOMMA PIC X(10).
+
+           WORKING-STORAGE SECTION.
+           01 VENDITE-MESE.
+               05 MESE-SOMME OCCURS 12 TIMES PIC 9(5) VALUE 0.
+           01 MESI-NOME VALUE "GenFebMarAprMagGiuLugAgoSetOttNovDic". 
+               05 MESE-GRUPPO OCCURS 12 TIMES.
+                   10 MESE-ABBREV PIC X(3).
+           01 INDICE-MESE PIC 99.
+
+       LINKAGE SECTION.
+           01 LNK-SCELTA PIC 9.
+
+       PROCEDURE DIVISION USING LNK-SCELTA.
+           OPEN OUTPUT FILE-MESE
+           PERFORM VARYING INDICE-MESE FROM 1 BY 1
+               UNTIL INDICE-MESE > 12
+               MOVE MESE-GRUPPO(INDICE-MESE) TO RECORD-MESE-NOME
+               MOVE MESE-SOMME(INDICE-MESE) TO RECORD-MESE-SOMMA
+               WRITE RECORD-MESE
+           END-PERFORM
+           CLOSE FILE-MESE
+           EXIT PROGRAM.

@@ -1,0 +1,14 @@
+Il programma richiede l’inserimento del numero successivo fino a 
+che non viene inserito zero.
+
+Inserito il numero zero il programma stampa:
+
+Il valore massimo inserito
+Il valore minimo inserito
+La somma dei valori inseriti
+La media dei valori inseriti
+
+N.B.
+I calcoli devono escludere il numero zero (non rientra in calcolo media, 
+minimo e massimo)
+e non devono avere limiti inferiori o superiori.

@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile COBOL",
+      "type": "shell",
+      "command": "cobc",
+      "args": [
+        "-conf=C:\\cobol\\gnucobol-3.1-dev-MinGW-binaries\\config\\default.conf",
+        "-free",
+        "-x",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Compile the current COBOL file using cobc"
+    },
+    {
+      "label": "Compile library COBOL",
+      "type": "shell",
+      "command": "cobc",
+      "args": [
+        "-conf=C:\\cobol\\gnucobol-3.1-dev-MinGW-binaries\\config\\default.conf",
+        "-m",
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Compile the current COBOL file using cobc"
+    }
+  ]
+}

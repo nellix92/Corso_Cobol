@@ -1,0 +1,31 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLOWORLD.
+       AUTHOR. NELLO.
+       DATE-WRITTEN. 10/06/2024.
+       DATA DIVISION.
+           WORKING-STORAGE SECTION.
+           01 BASE1 PIC 9(3) VALUE 0.
+           01 ALTEZZA1 PIC 9(3) VALUE 0.
+           01 BASE2 PIC 9(3) VALUE 0.
+           01 ALTEZZA2 PIC 9(3) VALUE 0.
+           01 AREA1 PIC 9(6) VALUE 0.
+           01 AREA2 PIC 9(6) VALUE 0.
+       PROCEDURE DIVISION.
+           DISPLAY "INSERISCI LA BASE 1: ".
+           ACCEPT BASE1.
+           DISPLAY "INSERISCI L'ALTEZZA 1: ".
+           ACCEPT ALTEZZA1.
+           DISPLAY "INSERISCI LA BASE 2: ".
+           ACCEPT BASE2.
+           DISPLAY "INSERISCI L'ALTEZZA 2: ".
+           ACCEPT ALTEZZA2.
+           COMPUTE AREA1 = BASE1*ALTEZZA1.
+           COMPUTE AREA2 = BASE2*ALTEZZA2.
+           IF AREA1 > AREA2 then
+              DISPLAY "L'AREA 1 "AREA1 " E' MAGGIORE DELL'AREA 2 "AREA2
+           ELSE IF AREA1 < AREA2 then
+              DISPLAY "L'AREA 1 "AREA1 " E' MINORE DELL'AREA 2 "AREA2
+           else
+              DISPLAY "L'AREA 1 "AREA1 " E' UGUALE ALL'AREA 2 "AREA2
+           END-IF
+       STOP RUN.

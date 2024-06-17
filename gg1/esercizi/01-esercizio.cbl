@@ -1,0 +1,20 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLOWORLD.
+       AUTHOR. NELLO.
+       DATE-WRITTEN. 10/06/2024.
+       DATA DIVISION.
+           WORKING-STORAGE SECTION.
+           01 WS-NOME PIC A(3) VALUE 'TOM'.              
+           01 WS-VIA PIC X(50) VALUE 'VIA TAL DEI TALI n. 100 ROMA ITA'.
+           01 WS-DEC PIC 9(3)V9(2) VALUE 100.50.
+           01 WS-NUM PIC 9(4) VALUE 1520.
+           01 WS-CODE PIC X(25) VALUE '392-112933-1234'.
+       PROCEDURE DIVISION.
+           A000-FIRST-PARA.
+           DISPLAY "DATA TYPE".
+           DISPLAY "WS-NOME: "WS-NOME.
+           DISPLAY "WS-VIA: "WS-VIA.
+           DISPLAY "WS-DEC: "WS-DEC.
+           DISPLAY "WS-NUM: "WS-NUM.
+           DISPLAY "WS-CODE: "WS-CODE.
+       STOP RUN. 
